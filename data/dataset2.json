@@ -1,0 +1,47 @@
+[
+{
+    "hc-key": "us-nc",
+    "value": 1,
+    "data-point": "&#8226; Reduced early voting days."
+},
+{
+    "hc-key": "us-va",
+    "value": 1,
+    "data-point": "&#8226; Added voter drive requirements."
+},
+{
+    "hc-key": "us-nh",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement."
+},
+{
+    "hc-key": "us-oh",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement.<br />&#8226; Reduced early voting days."
+},
+{
+    "hc-key": "us-tn",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement."
+},
+{
+    "hc-key": "us-ga",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement."
+},
+{
+    "hc-key": "us-sc",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement."
+},
+{
+    "hc-key": "us-nd",
+    "value": 1,
+    "data-point": "&#8226; Implemented new voter ID/citizenship proof requirement."
+},
+{
+    "hc-key": "us-az",
+    "value": 1,
+    "data-point": "&#8226; Added ballot pickup/delivery regulations."
+}
+]

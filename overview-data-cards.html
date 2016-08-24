@@ -1,0 +1,2303 @@
+---
+---
+
+{% include head.html %}
+<!-- <script src="../js/jquery.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- <script src="../js/bootstrap.min.js"></script> -->
+<script src="js/mixitup_custom.js"></script>
+<script src="js/iframeResizer.contentWindow.min.js"></script>
+<!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/mix.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/custom_modal.css" type="text/css" media="screen" charset="utf-8" />
+
+
+{% if page.hero %}
+
+<div class="phototron-hero herotitle">
+	<img src="/img/hero-stories/{{ page.hero }}.jpg" class="img-responsive" alt="" />
+{% unless page.titlebelowhero %}
+		<h1 class="animated fadeIn">{{ page.title }}</h1>
+{% endunless %}
+</div>
+
+{% endif %}
+
+<div class="container story-body">
+	<div class="row">
+
+		<div class="col-md-12">
+			{% if page.hero-caption %}
+				<div class="hero-credit">
+					<p class="animated fadeIn">{{ page.hero-caption }}</p>
+			</div>
+			{% endif %}
+{% if page.titlebelowhero %}
+
+<h1 class="not-hero-title animated fadeIn">{{ page.title }}</h1>
+{% endif %}
+
+		<div class="story-author">
+			{% if page.byline %}
+	    <p class="animated fadeIn">By {{ page.byline }} | News21. Published Aug. 20, 2016.</p>
+	    {% endif %}
+		</div>
+
+<div class="wrap">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h4>States' Voting Requirements</h4>
+        </div>
+      </div> <!-- end of row -->
+
+      <div class="row">
+        <div class="twelve columns">
+          <div class="programs">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter=".citproof">Proof of Citizenship Required</button>
+            <button class="filter-btn" data-filter=".nocitproof">Proof of Citizenship Not Required</button>
+            <button class="filter-btn" data-filter=".sdr">Offers same-day registration:</button>
+          </div>
+        </div>
+      </div> <!-- end of row -->
+
+      <div class="row">
+        <div class="columns twelve">
+          <h4>States' Voting Practices</h4>
+        </div>
+      </div> <!-- end of row -->
+
+      <div class="row">
+        <div class="columns twelve">
+          <div class="programs">
+            <button class="sort-btn" data-sort="purge:desc">Purged</button>
+            <button class="sort-btn" data-sort="rejected:desc">Provisional Rejected</button>
+            <button class="sort-btn" data-sort="early:asc">Days of early voting</button>
+            <button class="sort-btn" data-sort="id:desc">Voter ID</button>
+            <button class="sort-btn" data-sort="felon:desc">Felon voting</button>
+            <!-- <button class="sort-btn" data-sort="year:desc order:desc">Descending<span class="multi">(Multi)</span></button> -->
+          </div>
+        </div>
+      </div> <!-- end of row -->
+
+      <!-- <div class="row">
+        <div class="twelve columns">
+          <h4>U.S. States</h4>
+        </div>
+      </div> --> <!-- end of row -->
+
+      <div class="row">
+        <div class="twelve columns">
+          <ul class="courses" id="mix-wrapper">
+            <li class="mix-target citproof "data-order="1" data-purge="17.2" data-rejected="36.2" data-early="0" data-id="" data-felon="5" data-year="2"><a id="al" href="#alabama" data-toggle="modal" data-target="#ALModal"><H5>Alabama</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="2" data-purge="10.4" data-rejected="12.7" data-early="15" data-id="" data-felon="4" data-year="2"><a id="ak" href="#alaska" data-toggle="modal" data-target="#AKModal"><H5>Alaska</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="3" data-purge="9.9" data-rejected="12.8" data-early="93" data-id="" data-felon="5" data-year="2"><a id="az" href="#arizona" data-toggle="modal" data-target="#AZModal"><H5>Arizona</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="4" data-purge="9.6" data-rejected="58.6" data-early="15" data-id="" data-felon="3" data-year="2"><a id="ar" href="#arkansas" data-toggle="modal" data-target="#ARModal"><H5>Arkansas</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="5" data-purge="4.4" data-rejected="10.8" data-early="29" data-id="" data-felon="3" data-year="2"><a id="ca" href="#california" data-toggle="modal" data-target="#CAModal"><H5>California</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="6" data-purge="4.5" data-rejected="40.5" data-early="15" data-id="" data-felon="3" data-year="2"><a id="co" href="#colorado" data-toggle="modal" data-target="#COModal"><H5>Colorado</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="7" data-purge="8.3" data-rejected="47.4" data-early="0" data-id="" data-felon="3" data-year="2"><a id="ct" href="#connecticut" data-toggle="modal" data-target="#CTModal"><H5>Connecticut</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="8" data-purge="7.3" data-rejected="87.1" data-early="0" data-id="" data-felon="5" data-year="2"><a id="de" href="#delaware " data-toggle="modal" data-target="#DEModal"><H5>Delaware </H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="9" data-purge="3.8" data-rejected="42.8" data-early="14" data-id="" data-felon="5" data-year="2"><a id="fl" href="#florida " data-toggle="modal" data-target="#FLModal"><H5>Florida </H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target citproof "data-order="10" data-purge="12.8" data-rejected="42.6" data-early="21" data-id="" data-felon="4" data-year="2"><a id="ga" href="#georgia" data-toggle="modal" data-target="#GAModal"><H5>Georgia</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="11" data-purge="7.2" data-rejected="86.8" data-early="11" data-id="" data-felon="2" data-year="2"><a id="hi" href="#hawaii" data-toggle="modal" data-target="#HIModal"><H5>Hawaii</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="12" data-purge="14.9" data-rejected="0" data-early="11" data-id="" data-felon="4" data-year="2"><a id="id" href="#idaho" data-toggle="modal" data-target="#IDModal"><H5>Idaho</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="13" data-purge="0" data-rejected="26.9" data-early="40" data-id="" data-felon="2" data-year="2"><a id="il" href="#illinois" data-toggle="modal" data-target="#ILModal"><H5>Illinois</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="14" data-purge="17.6" data-rejected="71.6" data-early="28" data-id="" data-felon="2" data-year="2"><a id="in" href="#indiana" data-toggle="modal" data-target="#INModal"><H5>Indiana</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr"data-order="15" data-purge="7.9" data-rejected="13.9" data-early="40" data-id="" data-felon="5" data-year="2"><a id="ia" href="#iowa" data-toggle="modal" data-target="#IAModal"><H5>Iowa</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target citproof "data-order="16" data-purge="7.7" data-rejected="28.9" data-early="20" data-id="" data-felon="4" data-year="2"><a id="ks" href="#kansas" data-toggle="modal" data-target="#KSModal"><H5>Kansas</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="17" data-purge="2.9" data-rejected="85.5" data-early="0" data-id="" data-felon="5" data-year="2"><a id="ky" href="#kentucky" data-toggle="modal" data-target="#KYModal"><H5>Kentucky</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="18" data-purge="10" data-rejected="66.6" data-early="7" data-id="" data-felon="4" data-year="2"><a id="la" href="#louisiana" data-toggle="modal" data-target="#LAModal"><H5>Louisiana</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="19" data-purge="12.5" data-rejected="0" data-early="30" data-id="" data-felon="1" data-year="2"><a id="me" href="#maine" data-toggle="modal" data-target="#MEModal"><H5>Maine</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr"data-order="20" data-purge="0" data-rejected="7.4" data-early="8" data-id="" data-felon="2" data-year="2"><a id="md" href="#maryland " data-toggle="modal" data-target="#MDModal"><H5>Maryland </H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="21" data-purge="13" data-rejected="73.8" data-early="14" data-id="" data-felon="2" data-year="2"><a id="ma" href="#massachusetts " data-toggle="modal" data-target="#MAModal"><H5>Massachusetts </H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="22" data-purge="4.3" data-rejected="39.4" data-early="0" data-id="" data-felon="2" data-year="2"><a id="mi" href="#michigan" data-toggle="modal" data-target="#MIModal"><H5>Michigan</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="23" data-purge="9.6" data-rejected="0" data-early="46" data-id="" data-felon="4" data-year="2"><a id="mn" href="#minnesota" data-toggle="modal" data-target="#MNModal"><H5>Minnesota</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="24" data-purge="8.2" data-rejected="30.2" data-early="0" data-id="" data-felon="5" data-year="2"><a id="ms" href="#mississippi" data-toggle="modal" data-target="#MSModal"><H5>Mississippi</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="25" data-purge="11.3" data-rejected="66.8" data-early="0" data-id="" data-felon="4" data-year="2"><a id="mo" href="#missouri" data-toggle="modal" data-target="#MOModal"><H5>Missouri</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="26" data-purge="8.6" data-rejected="3.4" data-early="25" data-id="" data-felon="2" data-year="2"><a id="mt" href="#montana" data-toggle="modal" data-target="#MTModal"><H5>Montana</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="27" data-purge="1.1" data-rejected="18.7" data-early="35" data-id="" data-felon="4" data-year="2"><a id="ne" href="#nebraska" data-toggle="modal" data-target="#NEModal"><H5>Nebraska</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="28" data-purge="11.7" data-rejected="47.7" data-early="14" data-id="" data-felon="5" data-year="2"><a id="nv" href="#nevada" data-toggle="modal" data-target="#NVModal"><H5>Nevada</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr"data-order="29" data-purge="9.5" data-rejected="0" data-early="0" data-id="" data-felon="2" data-year="2"><a id="nh" href="#new hampshire" data-toggle="modal" data-target="#NHModal"><H5>New Hampshire</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="30" data-purge="5.9" data-rejected="17.9" data-early="45" data-id="" data-felon="4" data-year="2"><a id="nj" href="#new jersey" data-toggle="modal" data-target="#NJModal"><H5>New Jersey</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="31" data-purge="4.5" data-rejected="35" data-early="28" data-id="" data-felon="4" data-year="2"><a id="nm" href="#new mexico" data-toggle="modal" data-target="#NMModal"><H5>New Mexico</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="32" data-purge="0.4" data-rejected="42.6" data-early="0" data-id="" data-felon="3" data-year="2"><a id="ny" href="#new york" data-toggle="modal" data-target="#NYModal"><H5>New York</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="33" data-purge="10.1" data-rejected="52.3" data-early="10" data-id="" data-felon="4" data-year="2"><a id="nc" href="#north carolina" data-toggle="modal" data-target="#NCModal"><H5>North Carolina</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="34" data-purge="0" data-rejected="0" data-early="15" data-id="" data-felon="2" data-year="2"><a id="nd" href="#north dakota" data-toggle="modal" data-target="#NDModal"><H5>North Dakota</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="35" data-purge="11.6" data-rejected="9.6" data-early="28" data-id="" data-felon="2" data-year="2"><a id="oh" href="#ohio" data-toggle="modal" data-target="#OHModal"><H5>Ohio</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="36" data-purge="12.4" data-rejected="48.6" data-early="3" data-id="" data-felon="4" data-year="2"><a id="ok" href="#oklahoma" data-toggle="modal" data-target="#OKModal"><H5>Oklahoma</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="37" data-purge="9.7" data-rejected="1.4" data-early="21" data-id="" data-felon="2" data-year="2"><a id="or" href="#oregon" data-toggle="modal" data-target="#ORModal"><H5>Oregon</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="38" data-purge="10.6" data-rejected="34.5" data-early="0" data-id="" data-felon="2" data-year="2"><a id="pa" href="#pennsylvania" data-toggle="modal" data-target="#PAModal"><H5>Pennsylvania</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="39" data-purge="4.8" data-rejected="48.6" data-early="0" data-id="" data-felon="2" data-year="2"><a id="ri" href="#rhode island" data-toggle="modal" data-target="#RIModal"><H5>Rhode Island</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="40" data-purge="5.6" data-rejected="41.4" data-early="0" data-id="" data-felon="4" data-year="2"><a id="sc" href="#south carolina" data-toggle="modal" data-target="#SCModal"><H5>South Carolina</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="41" data-purge="7.4" data-rejected="67.8" data-early="45" data-id="" data-felon="4" data-year="2"><a id="sd" href="#south dakota" data-toggle="modal" data-target="#SDModal"><H5>South Dakota</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="42" data-purge="10.1" data-rejected="57.9" data-early="15" data-id="" data-felon="5" data-year="2"><a id="tn" href="#tennessee" data-toggle="modal" data-target="#TNModal"><H5>Tennessee</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="43" data-purge="12" data-rejected="74" data-early="13" data-id="" data-felon="4" data-year="2"><a id="tx" href="#texas" data-toggle="modal" data-target="#TXModal"><H5>Texas</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="44" data-purge="2.8" data-rejected="17.6" data-early="10" data-id="" data-felon="2" data-year="2"><a id="ut" href="#utah" data-toggle="modal" data-target="#UTModal"><H5>Utah</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="45" data-purge="8.5" data-rejected="33.3" data-early="45" data-id="" data-felon="1" data-year="2"><a id="vt" href="#vermont" data-toggle="modal" data-target="#VTModal"><H5>Vermont</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="46" data-purge="13.2" data-rejected="34.8" data-early="0" data-id="" data-felon="4" data-year="2"><a id="va" href="#virginia" data-toggle="modal" data-target="#VAModal"><H5>Virginia</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">YES</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="47" data-purge="10.5" data-rejected="14.1" data-early="18" data-id="" data-felon="4" data-year="2"><a id="wa" href="#washington" data-toggle="modal" data-target="#WAModal"><H5>Washington</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="48" data-purge="1" data-rejected="5.9" data-early="13" data-id="" data-felon="2" data-year="2"><a id="dc" href="#washington, d.c." data-toggle="modal" data-target="#DCModal"><H5>Washington, D.C.</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof "data-order="49" data-purge="7" data-rejected="29.1" data-early="10" data-id="" data-felon="4" data-year="2"><a id="wv" href="#west virginia" data-toggle="modal" data-target="#WVModal"><H5>West Virginia</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="50" data-purge="10.7" data-rejected="68.5" data-early="10" data-id="" data-felon="4" data-year="2"><a id="wi" href="#wisconsin" data-toggle="modal" data-target="#WIModal"><H5>Wisconsin</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">YES</td></tr></table></a></li>
+            <li class="mix-target nocitproof sdr "data-order="51" data-purge="7.3" data-rejected="47.8" data-early="40" data-id="" data-felon="5" data-year="2"><a id="wy" href="#wyoming" data-toggle="modal" data-target="#WYModal"><H5>Wyoming</H5><table><tr><td>Previous "Section 5" state</td><td class="thick">NO</td></tr><tr><td>New voting requirements since 2012</td><td class="thick">NO</td></tr></table></a></li>
+          </ul>
+        </div>
+      </div><!-- end of row -->
+      
+      <div id="alabama">
+        <div class="modal fade" id="ALModal" tabindex="-1" role="dialog" aria-lableledby="ALModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="ALModalLabel">Alabama</h4>
+                </div>
+                <div id="accordion-1">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Alabama passed HB 19 in 2011, but it didn't go into effect until 2014, after the Shelby County v. Holder decision. Some may consider Alabama's voter ID law to be strict, but if a voter can't provide a government-issued or student ID with a photo, he/she can still have their vote counted if two election officials sign a sworn statement saying they know the person is an eligible voter on the poll list. If not, the person has until 5 p.m. on the Friday after the election to bring the required ID.  </p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p>In 2014, Alabama extended the window between the close of registration from 10 to 14 days.</p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p>In 2014, Alabama extended the window between the close of registration from 10 to 14 days.</p></div>
+                  <h3>Proof of Citizenship:&nbspYes*</h3>
+                  <div class="accordion-text"><p>Alabama received federal approval to require proof of citizenship documentation for voter registration in January 2016. However, Alabama will not be implemeting this policy for the November 2016 election. </p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;17.2%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;14</h3>
+                  <div class="accordion-text"><p>In 2014, Alabama extended the window between the close of registration from 10 to 14 days.</p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;36.2%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="alaska">
+        <div class="modal fade" id="AKModal" tabindex="-1" role="dialog" aria-lableledby="AKModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="AKModalLabel">Alaska</h4>
+                </div>
+                <div id="accordion-2">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.4%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;12.7%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="arizona">
+        <div class="modal fade" id="AZModal" tabindex="-1" role="dialog" aria-lableledby="AZModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="AZModalLabel">Arizona</h4>
+                </div>
+                <div id="accordion-3">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;93</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbspNo*</h3>
+                  <div class="accordion-text"><p>Arizona passed a law that required proof of citizenship documentation to register, but it was struck down by the Supreme Court in 2015.</p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;9.9%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;29</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>HB 2023, passed in 2016, made it a felony crime for anyone other than a family member, household member, or caregiver of a voter to turn in the voter's ballot. This law is being challenged in a lawsuit filed by the Democratic National Committee. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;12.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="arkansas">
+        <div class="modal fade" id="ARModal" tabindex="-1" role="dialog" aria-lableledby="ARModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="ARModalLabel">Arkansas</h4>
+                </div>
+                <div id="accordion-4">
+                  <h3>Voter ID:&nbsp;Yes*</h3>
+                  <div class="accordion-text"><p>Arkansas passed AR S 2, a strict photo ID requirement, in 2013. It was struck down by the Arkansas Supreme Court, and their previous ID law remains the current requirement which is a non-strict non-photo ID requirement.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;9.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;29</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Arkansas passed SB 1067 in 2011, which requires people in long-term care or residential facilities or with disabilities to reapply for absentee ballots each year. </p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Forms must be submitted within 21 days after being filled out, or 30 days before an election, whichever comes first. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p>A 2011 law requires a person who returns a voter's absentee ballot  to sign an oath in front of the county clerk. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;58.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="california">
+        <div class="modal fade" id="CAModal" tabindex="-1" role="dialog" aria-lableledby="CAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="CAModalLabel">California</h4>
+                </div>
+                <div id="accordion-5">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;29</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;4.4%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Those seeking more than 50 registration cards must submit a distribution plan. Those collecting registration forms must provide their phone numbers and addresses to each person they register. Forms collected during a drive must be submitted three business days after they're filled out or by the registration deadline, whichever comes first. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A vote-by-mail voter can designate a spouse, family member, child, parent, grandparent, grandchild, or other family member who lives in the same house to to return the ballot.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;10.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="colorado">
+        <div class="modal fade" id="COModal" tabindex="-1" role="dialog" aria-lableledby="COModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="COModalLabel">Colorado</h4>
+                </div>
+                <div id="accordion-6">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;4.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Registration drives must register with the state. Those conducting a drive must file a statement of intent plus complete training and testing. The registration forms are required to be submitted within 15 business days of being signed, or before the registration deadline, whichever comes first. A 2016 law added training and reporting requirements for voter registration drives.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>One person may turn in up to 10 ballots.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;40.5%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="connecticut">
+        <div class="modal fade" id="CTModal" tabindex="-1" role="dialog" aria-lableledby="CTModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="CTModalLabel">Connecticut</h4>
+                </div>
+                <div id="accordion-7">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;8.3%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;47.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="delaware ">
+        <div class="modal fade" id="DEModal" tabindex="-1" role="dialog" aria-lableledby="DEModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="DEModalLabel">Delaware</h4>
+                </div>
+                <div id="accordion-8">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.3%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;24</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>If using the state's registration form, drives must register with the state, plus organizers must go through training and keep logs of every form/person soliticited. The completed forms and log must be submitted 5 days after completed. However, online registration or the federal form can be used at drives up until the state's normal registration deadline. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;87.1%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="florida ">
+        <div class="modal fade" id="FLModal" tabindex="-1" role="dialog" aria-lableledby="FLModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="FLModalLabel">Florida</h4>
+                </div>
+                <div id="accordion-9">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;14</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;3.8%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;29</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>In 2011, Florida passed new registration drive requirements (HB 1355) with a 48-hour deadline for drives to submit registration forms after they're signed, and the organization running the drive was required to account for all registration forms, even unused ones, and submit monthly reports even if there was no registration activity. The law also added a requirement that registration drives need to register with the state. A 2012 federal court order enjoined these measures. The deadline for drives to submit completed forms is now 10 days, and drives must first register with the state. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;42.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="georgia">
+        <div class="modal fade" id="GAModal" tabindex="-1" role="dialog" aria-lableledby="GAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="GAModalLabel">Georgia</h4>
+                </div>
+                <div id="accordion-10">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbspY</h3>
+                  <div class="accordion-text"><p>Georgia received federal approval to require proof of citizenship documentation for voter registration in January 2016. However, Georgia will not be implementing this policy for the November 2016 election. </p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;12.8%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Forms collected during voter registration drives must be submitted within 10 days of their completion, or if it is within 14 days before the registration deadline, the forms must be submitted within 72 hours of their completion or before the deadline, whichever comes first. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>No person can assist more than ten voters in one election. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;42.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="hawaii">
+        <div class="modal fade" id="HIModal" tabindex="-1" role="dialog" aria-lableledby="HIModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="HIModalLabel">Hawaii</h4>
+                </div>
+                <div id="accordion-11">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;11</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.2%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;boh</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Absentee ballots must be returned by mail.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;86.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="idaho">
+        <div class="modal fade" id="IDModal" tabindex="-1" role="dialog" aria-lableledby="IDModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="IDModalLabel">Idaho</h4>
+                </div>
+                <div id="accordion-12">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Same-day registration is available at the polls if voters miss the deadline 25 days before the election.</p></div>
+                  <h3>Number of days in early voting window:&nbsp;11</h3>
+                  <div class="accordion-text"><p>Same-day registration is available at the polls if voters miss the deadline 25 days before the election.</p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;14.9%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p>Same-day registration is available at the polls if voters miss the deadline 25 days before the election.</p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Idaho is exempt from a federal law that requires voter registration to be offered at motor vehicle offices. </p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;0%</h3>
+                  <div class="accordion-text"><p>CHANGED FROM NA TO ZERO</p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="illinois">
+        <div class="modal fade" id="ILModal" tabindex="-1" role="dialog" aria-lableledby="ILModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="ILModalLabel">Illinois</h4>
+                </div>
+                <div id="accordion-13">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;40</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;0%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p>Illinois law "provides that online voter registration shall be open for no more than 36 nor less than seven days before such election."  </p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Each county can decide if it wants to make training mandatory. Deputy registrars must return all forms by first class mail within two business days or by personal delivery within seven days, which is shortened to two days in the week before the registation deadline. These rules don't apply to drives using the federal form or online registration. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;26.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="indiana">
+        <div class="modal fade" id="INModal" tabindex="-1" role="dialog" aria-lableledby="INModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="INModalLabel">Indiana</h4>
+                </div>
+                <div id="accordion-14">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>In 2013, Indiana passed a law that further authorized election officials to demand ID at the polls.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;17.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;29</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Only a voter's attorney or household member may return an absentee ballot. Anyone else who returns the ballot is guilty of a felony. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p>In 2015, the state passed a law to barr "serious sex offenders" from voting in person on a school campus.</p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;71.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="iowa">
+        <div class="modal fade" id="IAModal" tabindex="-1" role="dialog" aria-lableledby="IAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="IAModalLabel">Iowa</h4>
+                </div>
+                <div id="accordion-15">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;40</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.9%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;13.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="kansas">
+        <div class="modal fade" id="KSModal" tabindex="-1" role="dialog" aria-lableledby="KSModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="KSModalLabel">Kansas</h4>
+                </div>
+                <div id="accordion-16">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;20</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbspY</h3>
+                  <div class="accordion-text"><p>Kansas received federal approval to require proof of citizenship documentation for voter registration in January 2016.</p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.7%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Those seeking more than 25 registration forms at a time must submit a distribution plan. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;28.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="kentucky">
+        <div class="modal fade" id="KYModal" tabindex="-1" role="dialog" aria-lableledby="KYModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="KYModalLabel">Kentucky</h4>
+                </div>
+                <div id="accordion-17">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p> </p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;2.9%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;85.5%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="louisiana">
+        <div class="modal fade" id="LAModal" tabindex="-1" role="dialog" aria-lableledby="LAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="LAModalLabel">Louisiana</h4>
+                </div>
+                <div id="accordion-18">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;7</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Those wishing to hold a drive must submit an application to the state, and must turn in the forms within 30 days of completion. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>If someone other than a family member turns in an absentee ballot, they need to sign a statement saying that the voter authorized them to turn in the ballot.  </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;66.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="maine">
+        <div class="modal fade" id="MEModal" tabindex="-1" role="dialog" aria-lableledby="MEModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MEModalLabel">Maine</h4>
+                </div>
+                <div id="accordion-19">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;12.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Voter registration forms collected during drives must be submitted 21 days before the election, even though the state has same-day registration at the polls. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspUnrestricted</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;0%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="maryland ">
+        <div class="modal fade" id="MDModal" tabindex="-1" role="dialog" aria-lableledby="MDModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MDModalLabel">Maryland</h4>
+                </div>
+                <div id="accordion-20">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;8</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;0%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Those wishing to hold a drive can get optional training to become an official registration volunteer, for which they would have to be at least 18 and sign a sworn statement. Any forms collected during a drive must be submitted within five days of completion or before the registration deadline, whichever comes first.  </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A voter must either mail or hand-deliver an absentee ballot.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;7.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="massachusetts ">
+        <div class="modal fade" id="MAModal" tabindex="-1" role="dialog" aria-lableledby="MAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MAModalLabel">Massachusetts</h4>
+                </div>
+                <div id="accordion-21">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;14</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;13%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;19</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A family member may return an absentee ballot. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;73.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="michigan">
+        <div class="modal fade" id="MIModal" tabindex="-1" role="dialog" aria-lableledby="MIModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MIModalLabel">Michigan</h4>
+                </div>
+                <div id="accordion-22">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;4.3%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Only a family member or household member may return an absentee ballot. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;39.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="minnesota">
+        <div class="modal fade" id="MNModal" tabindex="-1" role="dialog" aria-lableledby="MNModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MNModalLabel">Minnesota</h4>
+                </div>
+                <div id="accordion-23">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;46</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;9.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;online</h3>
+                  <div class="accordion-text"><p>Minnesota is exempt from a federal law that requires voter registration to be offered at motor vehicle offices.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Forms collected by an agency or individual on behalf of other voters must be turned in within 10 days of the date written on the registration application.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>One person cannot return more than three ballots. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;0%</h3>
+                  <div class="accordion-text"><p>CHANGED FROM NA TO ZERO</p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="mississippi">
+        <div class="modal fade" id="MSModal" tabindex="-1" role="dialog" aria-lableledby="MSModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MSModalLabel">Mississippi</h4>
+                </div>
+                <div id="accordion-24">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Mississippi's strict photo ID requirement was passed in 2011, but was initially blocked by the Voting Rights Act. It went into effect in 2014 after Shelby County v. Holder. </p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;8.2%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p>No major requirements exist today, but the state can charge individuals or organizations requesting forms in bulk quantities.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>If a voter receives an absentee ballot in the mail, he or she needs to return it by mail. Only the voter can mail his or her own ballot.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;30.2%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="missouri">
+        <div class="modal fade" id="MOModal" tabindex="-1" role="dialog" aria-lableledby="MOModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MOModalLabel">Missouri</h4>
+                </div>
+                <div id="accordion-25">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;11.3%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;26</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Missouri has an optional official volunteer system called "deputy registration officials," but anyone who is paid to collect more than 10 voter registration forms has to register with the state as a voter registration solicitor, and must be a registered voter. Any forms collected on behalf of other voters must be submitted within seven days. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A relative of the family member may return an absentee ballot. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;66.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="montana">
+        <div class="modal fade" id="MTModal" tabindex="-1" role="dialog" aria-lableledby="MTModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="MTModalLabel">Montana</h4>
+                </div>
+                <div id="accordion-26">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Late registration can be completed at county election offices until the polls close on Election Day.</p></div>
+                  <h3>Number of days in early voting window:&nbsp;25</h3>
+                  <div class="accordion-text"><p>Late registration can be completed at county election offices until the polls close on Election Day.</p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;8.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p>Late registration can be completed at county election offices until the polls close on Election Day.</p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;3.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="nebraska">
+        <div class="modal fade" id="NEModal" tabindex="-1" role="dialog" aria-lableledby="NEModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NEModalLabel">Nebraska</h4>
+                </div>
+                <div id="accordion-27">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;35</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;1.1%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;10</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Nebraska has an optional "deputy registrar" system, for which training is required. Deputy registrars also must take an oath and notify the state of the location and time of the proposed registration drive and party affiliations of the deputy registrars 48 hours in advance, and must return completed forms by the end of the following business day. For drives conducted outside of the program, forms must be submitted to the state 19 days before Election Day.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A voter can designate another person to return an absentee ballot. Each person can deliver one ballot on behalf of another voter.  </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;18.7%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="nevada">
+        <div class="modal fade" id="NVModal" tabindex="-1" role="dialog" aria-lableledby="NVModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NVModalLabel">Nevada</h4>
+                </div>
+                <div id="accordion-28">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;14</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;11.7%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;20</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Requests for more than 50 registration forms must be accompanied by a distribution plan, which is submitted to the state. The state can charge for more than 50 copies of the application. All used and unused materials must be returned to the state, and applications collected during the drive must be submitted within 10 days of their completion, with the organizer of the drive being responsible for postage costs if mailed. The organizer must also write his/her name on the bottom of every form they submit on behalf of other voters. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A ballot can be returned by a family member with a signed form. It is a felony to violate this law. There is no limit on the number of ballots one person can return. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;47.7%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="new hampshire">
+        <div class="modal fade" id="NHModal" tabindex="-1" role="dialog" aria-lableledby="NHModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NHModalLabel">New Hampshire</h4>
+                </div>
+                <div id="accordion-29">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>In June 2014, New Hampshire passed SB 206, which removed the option for county officials to vouch for the identity of a voter. A voter without the right ID will be photographed at the polls and that photo will be attached to a sworn statement. </p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;9.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;no</h3>
+                  <div class="accordion-text"><p>New Hampshire is exempt from a federal law that requires voter registration to be offered at motor vehicle offices.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>New Hampshire does not allow voter registration drives.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A spouse, parent, sibling, or child of an absentee voter can return a ballot.  The family member must fill out a form provided by the secretary of state and show photo ID. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;0%</h3>
+                  <div class="accordion-text"><p>CHANGED FROM NA TO ZERO</p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="new jersey">
+        <div class="modal fade" id="NJModal" tabindex="-1" role="dialog" aria-lableledby="NJModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NJModalLabel">New Jersey</h4>
+                </div>
+                <div id="accordion-30">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;45</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;5.9%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>One person can collect and turn in up to three ballots. Previously, one bearer could turn in up to 10 ballots.  The bearer must also show a form of ID, such as a driver's license, that includes their full address and signature. The new law was approved in August 2015 and took effect immediately. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;17.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="new mexico">
+        <div class="modal fade" id="NMModal" tabindex="-1" role="dialog" aria-lableledby="NMModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NMModalLabel">New Mexico</h4>
+                </div>
+                <div id="accordion-31">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;4.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;28</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Voter registration forms must be returned within 48 hours. Groups doing voter registration must pre-register with the state.  </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>An immediate family member or caregiver may return an absentee ballot</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;35%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="new york">
+        <div class="modal fade" id="NYModal" tabindex="-1" role="dialog" aria-lableledby="NYModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NYModalLabel">New York</h4>
+                </div>
+                <div id="accordion-32">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;0.4%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;25</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>No one other than the voter can return an absentee ballot.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;42.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="north carolina">
+        <div class="modal fade" id="NCModal" tabindex="-1" role="dialog" aria-lableledby="NCModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NCModalLabel">North Carolina</h4>
+                </div>
+                <div id="accordion-33">
+                  <h3>Voter ID:&nbsp;No*</h3>
+                  <div class="accordion-text"><p>North Carolina passed HB 589 in August 2013, which instituted a strict photo ID requirement for voters unless he/she signed a sworn statement describing an impediment to obtaining the correct ID. A federal court struck down the law in July, saying it would adversely affect African-Americans' ability to vote.</p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes*</h3>
+                  <div class="accordion-text"><p>North Carolina passed a law to remove same-day registration in 2013. It will be offered in the November election, because of a court ruling in July 2016 that found the measure would disadvantage African-American voters. </p></div>
+                  <h3>Number of days in early voting window:&nbsp;10</h3>
+                  <div class="accordion-text"><p>North Carolina passed a law to remove same-day registration in 2013. It will be offered in the November election, because of a court ruling in July 2016 that found the measure would disadvantage African-American voters. </p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.1%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;25</h3>
+                  <div class="accordion-text"><p>North Carolina passed a law to remove same-day registration in 2013. It will be offered in the November election, because of a court ruling in July 2016 that found the measure would disadvantage African-American voters. </p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Voter registration forms must be submitted no later than 25 days before the election. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Only the voter or the voter's immediate family member may return an absentee ballot. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;52.3%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="north dakota">
+        <div class="modal fade" id="NDModal" tabindex="-1" role="dialog" aria-lableledby="NDModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="NDModalLabel">North Dakota</h4>
+                </div>
+                <div id="accordion-34">
+                  <h3>Voter ID:&nbsp;No*</h3>
+                  <div class="accordion-text"><p>In 2013, North Dakota passed HB 1333, which tightened its existing ID law so that only four types of government-issued ID were acceptable. In 2015, the state passed HB 1332, which added restrictions on an alternative method for people to vote if they couldn't get the correct ID because of a disability. In August 2016, its photo ID restrictions were struck down by a federal court, which found it would disadvantage Native Americans' access to the vote.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Voter registration is not required in North Dakota. The state abolished it in 1951.</p></div>
+                  <h3>Number of days in early voting window:&nbsp;15</h3>
+                  <div class="accordion-text"><p>Voter registration is not required in North Dakota. The state abolished it in 1951.</p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;0%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p>Voter registration is not required in North Dakota. The state abolished it in 1951.</p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;no</h3>
+                  <div class="accordion-text"><p>North Dakota does not have voter registration.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p>North Dakota has no voter registration. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>No one other than the voter can return an absentee ballot.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;0%</h3>
+                  <div class="accordion-text"><p>CHANGED FROM NA TO ZERO</p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="ohio">
+        <div class="modal fade" id="OHModal" tabindex="-1" role="dialog" aria-lableledby="OHModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="OHModalLabel">Ohio</h4>
+                </div>
+                <div id="accordion-35">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>In 2013, Ohio passed SB 216 which shortened the amount of time for a voter to return to a government office to prove their identity if they didn't have the correct ID at the polls, from 10 to seven days. I was struck down by a court in June 2016, and the state appealed. A decision is expected before Election Day. </p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes*</h3>
+                  <div class="accordion-text"><p>A lawsuit is pending over Ohio's elimination of same-day registration in 2014, and a decision is expected before Election Day.</p></div>
+                  <h3>Number of days in early voting window:&nbsp;28</h3>
+                  <div class="accordion-text"><p>A lawsuit is pending over Ohio's elimination of same-day registration in 2014, and a decision is expected before Election Day.</p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;11.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;27</h3>
+                  <div class="accordion-text"><p>A lawsuit is pending over Ohio's elimination of same-day registration in 2014, and a decision is expected before Election Day.</p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No*</h3>
+                  <div class="accordion-text"><p>Ohio passed passed SB 216 in 2013, which requires address and date of birth information on absentee ballots. The state also passed SB 205 in 2013, which requires elections officials to discard absentee ballots if they have incomplete or incorrect identification information. Both were implemented in 2014.  A court ruled in June 2016 both would have discriminatory effects, and the state has appealed. A decision is expected before Election Day.  </p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Forms must be turned in within 10 days of completion.  All people doing voter registration drives need to register with the Secretary of State and disclose in which counties they expect to register voters. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;9.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="oklahoma">
+        <div class="modal fade" id="OKModal" tabindex="-1" role="dialog" aria-lableledby="OKModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="OKModalLabel">Oklahoma</h4>
+                </div>
+                <div id="accordion-36">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p> </p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;3</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;12.4%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;24</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>The maximum number of applications county officials can give out ranges from 250 to 2,000. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Anyone can return a voter's absentee ballot. Each person can deliver a maximum of one ballot on behalf of another voter. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;48.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="oregon">
+        <div class="modal fade" id="ORModal" tabindex="-1" role="dialog" aria-lableledby="ORModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="ORModalLabel">Oregon</h4>
+                </div>
+                <div id="accordion-37">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;9.7%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p>Every eligible voter who visits a motor vehicle office is automatically registered to vote, no form submission required.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Voter registration forms must be returned within five calendar days of completion. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;1.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="pennsylvania">
+        <div class="modal fade" id="PAModal" tabindex="-1" role="dialog" aria-lableledby="PAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="PAModalLabel">Pennsylvania</h4>
+                </div>
+                <div id="accordion-38">
+                  <h3>Voter ID:&nbsp;No*</h3>
+                  <div class="accordion-text"><p>Pennsylvania passed HB 934, a strict photo ID requirement, in 2012. It was struck down in January 2014 by the Pennsylvania Supreme Court. </p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Only the voter can return an absentee ballot in person.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;34.5%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="rhode island">
+        <div class="modal fade" id="RIModal" tabindex="-1" role="dialog" aria-lableledby="RIModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="RIModalLabel">Rhode Island</h4>
+                </div>
+                <div id="accordion-39">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Rhode Island passed S 400 in 2011, which instituted a non-strict photo ID requirement. It was implemented in 2014.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;4.8%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;48.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="south carolina">
+        <div class="modal fade" id="SCModal" tabindex="-1" role="dialog" aria-lableledby="SCModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="SCModalLabel">South Carolina</h4>
+                </div>
+                <div id="accordion-40">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>South Carolina passed H 3003 in 2011, which instituted a strict photo ID requirement, with the exception that voters without the correct ID could sign a sworn statement describing an impediment to obtaining the correct ID. The law was implemented in 2014.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;5.6%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;31</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;41.4%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="south dakota">
+        <div class="modal fade" id="SDModal" tabindex="-1" role="dialog" aria-lableledby="SDModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="SDModalLabel">South Dakota</h4>
+                </div>
+                <div id="accordion-41">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;45</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.4%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Voter registration forms must be turned in within 20 days of completion. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;67.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="tennessee">
+        <div class="modal fade" id="TNModal" tabindex="-1" role="dialog" aria-lableledby="TNModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="TNModalLabel">Tennessee</h4>
+                </div>
+                <div id="accordion-42">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>In 2013, Tennessee passed S 125, which made it so county- or municipality-issued IDs are not valid forms of voter ID.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;15</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.1%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;57.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="texas">
+        <div class="modal fade" id="TXModal" tabindex="-1" role="dialog" aria-lableledby="TXModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="TXModalLabel">Texas</h4>
+                </div>
+                <div id="accordion-43">
+                  <h3>Voter ID:&nbsp;Yes*</h3>
+                  <div class="accordion-text"><p>Texas passed SB 14  in 2011, which was implemented in 2013 after Shelby County v. Holder. It was ruled to have discriminatory effects three times in court, but was enforced while the state appealed those decisions. In July 2016, a federal court ruled for a fourth time that it could disenfranchise minority voters, and a lower court has been ordered to find ways to make it easier for those without ID to have their votes counted for the November 2016 election.</p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;13</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;12%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;30</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;DMV</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Anyone holding a registration drive must receive state training and pass an in-person examination. The deadline to turn in forms is 5 days after they're collected. Failure to turn them in in a timely manner is a criminal offense. A 2015 law mandated that volunteers in this position can be terminated for destroying or altering registration applications.</p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Texas passed HB 148 in 2013, making it illegal to get paid based on the number of ballots collected. Repeat offenders receive a felony charge.  A 2015 law made it a crime to sign as a witness for more than one absentee voter per election.</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;74%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="utah">
+        <div class="modal fade" id="UTModal" tabindex="-1" role="dialog" aria-lableledby="UTModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="UTModalLabel">Utah</h4>
+                </div>
+                <div id="accordion-44">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;10</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;2.8%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;6</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;17.6%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="vermont">
+        <div class="modal fade" id="VTModal" tabindex="-1" role="dialog" aria-lableledby="VTModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="VTModalLabel">Vermont</h4>
+                </div>
+                <div id="accordion-45">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;45</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;8.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;5</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspUnrestricted</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;33.3%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="virginia">
+        <div class="modal fade" id="VAModal" tabindex="-1" role="dialog" aria-lableledby="VAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="VAModalLabel">Virginia</h4>
+                </div>
+                <div id="accordion-46">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;13.2%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;21</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Virginia added requirements for registration drives in 2013. All individuals or organizations requesting 25 or more forms must register and complete certified training program, and sign an affidavit swearing to abide by all voter registration laws and rules. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;34.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="washington">
+        <div class="modal fade" id="WAModal" tabindex="-1" role="dialog" aria-lableledby="WAModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="WAModalLabel">Washington</h4>
+                </div>
+                <div id="accordion-47">
+                  <h3>Voter ID:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;18</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.5%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;7</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Voter registration forms must be returned within five business days. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;14.1%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="washington, d.c.">
+        <div class="modal fade" id="DCModal" tabindex="-1" role="dialog" aria-lableledby="DCModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="DCModalLabel">District of Columbia</h4>
+                </div>
+                <div id="accordion-48">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;13</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;1%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;5.9%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="west virginia">
+        <div class="modal fade" id="WVModal" tabindex="-1" role="dialog" aria-lableledby="WVModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="WVModalLabel">West Virginia</h4>
+                </div>
+                <div id="accordion-49">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;10</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;20</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp; Both</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>West Virginia has an optional official volunteer system. People and groups outside the official system can still conduct registration drives, but forms must be delivered within 15 days of completion. Requests for 10 or more forms must be recorded by the county clerk with a description of the days and locations of the proposed registration drives. A group cannot request more than 200 registration forms. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>One person cannot deliver more than two absentee ballots in one election. </p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;29.1%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="wisconsin">
+        <div class="modal fade" id="WIModal" tabindex="-1" role="dialog" aria-lableledby="WIModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="WIModalLabel">Wisconsin</h4>
+                </div>
+                <div id="accordion-50">
+                  <h3>Voter ID:&nbsp;Yes*</h3>
+                  <div class="accordion-text"><p>Wisconsin passed a strict photo ID requirement in 2011, which was implemented 2015. A July 2016 court ordered that it could not be enforced fully in November 2016 because it put minority voters at a disadvantage, but that decision was reversed by an appellate court in August. It appears the voter ID law will be in full effect for the November election.</p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;10</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;10.7%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Wisconsin is exempt from a federal law that requires voter registration to be offered at motor vehicle offices.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>A copy of the required forms for proof of residence for first-time voters must be included with registration forms if collected by anyone other than a "special deputy" who receives training.
+</p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p>f a voter receives an absentee ballot in the mail, it must be returned by mail. in-person absentee voting is also available (no excuse required).</p></div>
+                  <h3>Restoration of felon voting rights:&nbspRestoration after incarceration and parole or probation</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;68.5%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="wyoming">
+        <div class="modal fade" id="WYModal" tabindex="-1" role="dialog" aria-lableledby="WYModalLabel">
+          <div class="vertical-alignment-helper">
+            <div class="modal-dailog modal-lg vertical-align-center" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="WYModalLabel">Wyoming</h4>
+                </div>
+                <div id="accordion-51">
+                  <h3>Voter ID:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Offers same-day registration:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Number of days in early voting window:&nbsp;40</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Proof of Citizenship:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of voters removed from rolls:&nbsp;7.3%</h3>
+                  <div class="accordion-text"></div>
+                  <h3>Number of days between registration deadline and election:&nbsp;0</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Online/Motor vehicle office registration:&nbsp;No</h3>
+                  <div class="accordion-text"><p>Wyoming is exempt from a federal law that requires voter registration to be offered at motor vehicle offices.</p></div>
+                  <h3>Excuse needed to vote absentee:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Registration Drive Requirements:&nbsp;Yes</h3>
+                  <div class="accordion-text"><p>Wyoming doesn't accept voter registration applications from voter registration drives. </p></div>
+                  <h3>Limits on ballot collection:&nbsp;No</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Restoration of felon voting rights:&nbspMay permanently lose right to vote</h3>
+                  <div class="accordion-text"><p></p></div>
+                  <h3>Percent of provisional ballots rejected:&nbsp;47.8%</h3>
+                  <div class="accordion-text"><p></p></div>
+                </div><!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end of container -->
+  </div><!-- end of wrap -->
+
+  <script src="js/jquery.mixitup.min.js"></script>
+  <script src="js/mixitup.js"></script>
+
+</div>
+<!-- /row -->
+
+{% include storyfooter.html %}
+{% include foot.html %}
