@@ -1,0 +1,206 @@
+[
+  {
+	"state": "Alabama",
+	"felon_voting_law": "Those convicted of felonies involving \"moral turpitude\" lose the right to vote and must submit an application to the state's Board of Pardons and Paroles after they have completed their full sentence and paid court fees, fines and restitution. If convicted of one of 15 crimes specified by the state, an individual is ineligible for restoration of rights. Felony DUI and possession of drugs do not involve \"moral turpitude.\""
+  },
+  {
+	"state": "Alaska",
+	"felon_voting_law": "Those convicted of felonies involving \"moral turpitude\" automatically have their right to vote restored after completing their full sentence. The state has a specified list of felonies which involve \"moral turpitude.\" Once eligible, felons must submit their discharge papers along with a voter registration application."
+  },
+  {
+	"state": "Arizona",
+	"felon_voting_law": "First-time offenders automatically have their right to vote restored once they have been released from incarcereation, completed probation and paid court fees, fines and restitution. They must register again to vote. Repeat offenders must submit an application for restoration of rights to the county court that sentenced them or discharged them from probation. The judge has the discretion to grant or deny the restoration of rights."
+  },
+  {
+	"state": "Arkansas",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they complete their full sentence or are pardoned by the governor and pay probation and parole fees, court fees, fines and restitution. Felons must submit proof of discharge and payment to their local county clerks to register to vote."
+  },
+  {
+	"state": "California",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration and complete parole. They must register again to vote once eligible."
+  },
+  {
+	"state": "Colorado",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration and complete parole. They must register again to vote once eligible."
+  },
+  {
+	"state": "Connecticut",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration, complete parole and pay court fees, fines and restitution. They must register again to vote once eligible. Those convicted of felonies violating Title 9 of Connecticut Election statutes must also be discharged from probation to be eligible to register again to vote."
+  },
+  {
+	"state": "D.C.",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Delaware",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they complete their full sentence. They must register again to vote once eligible. Those who have committed murder or manslaughter, an offense against public administration or a sexual offense are permanently disenfranchised."
+  },
+  {
+	"state": "Florida",
+	"felon_voting_law": "Those convicted of nonviolent felonies must wait five years after the completion of their full sentence to submit an application to the Florida Commission on Offender Review to have their rights restored. Those convicted of violent felonies must wait seven years. The members of the commission have the discretion to grant or deny restoration of rights."
+  },
+  {
+	"state": "Georgia",
+	"felon_voting_law": "Felons have their right to vote automatically restored after completion of their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Hawaii",
+	"felon_voting_law": "Felons have their right to vote automatically restored after being released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Idaho",
+	"felon_voting_law": "Felons have their right to vote automatically restored after completion of their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Illinois",
+	"felon_voting_law": "Felons have their right to vote automatically restored after being released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Indiana",
+	"felon_voting_law": "Felons have their right to vote automatically restored after being released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Iowa",
+	"felon_voting_law": "Those who have committed an \"infamous crime\" lose the right to vote until they complete their full sentences, pay court fees, fines and restitution and submit a restoration application to the governor. The governor has the discretion to grant or deny the restoration of rights. A recent Iowa Supreme Court ruling upheld the precedent that all felonies are considered \"infamous crimes.\""
+  },
+  {
+	"state": "Kansas",
+	"felon_voting_law": "Felons have their right to vote automatically restored after completion of their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Kentucky",
+	"felon_voting_law": "Felons lose the right to vote until they complete their full sentences, pay court fees, fines and restitution, and submit a voter registration application to the Department of Corrections' Division of Probation and Parole to be reviewed by the governor. The governor has the discretion to grant or deny the restoration of rights."
+  },
+  {
+	"state": "Louisiana",
+	"felon_voting_law": "Felons automatically have their right to vote restored after completion of their full sentences. They must provide documentation to their parish's registrar of voters proving they are no longer under an order of imprisonment before register againing to vote."
+  },
+  {
+	"state": "Maine",
+	"felon_voting_law": "Felons never lose the right to vote and can submit an absentee ballot while incarcerated."
+  },
+  {
+	"state": "Maryland",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Massachusetts",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Michigan",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Minnesota",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Mississippi",
+	"felon_voting_law": "Only those convicted of one of Mississippi's 22 disenfranchising crimes lose the right to vote. They must apply to the governor for a pardon or have a suffrage bill in their name pass through the state Legislature."
+  },
+  {
+	"state": "Missouri",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible. Those convicted of crimes related to the exercise of the right of suffrage are permanently disenfranchised."
+  },
+  {
+	"state": "Montana",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Nebraska",
+	"felon_voting_law": "Felons automatically have their right to vote restored two years after completing their full sentence. They must register again to vote once eligible. Those convicted of treason are permanently disenfranchised."
+  },
+  {
+	"state": "Nevada",
+	"felon_voting_law": "Those convicted of nonviolent felonies automatically have their right to vote restored after completing their full sentence. Repeat offenders and those convicted of violent felonies must seek restoration through the court that convicted them. To register to vote, all felons must present discharge papers or a court order restoring their rights."
+  },
+  {
+	"state": "New Hampshire",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "New Jersey",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "New Mexico",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "New York",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration and have completed parole. They must register again to vote once eligible. "
+  },
+  {
+	"state": "North Carolina",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "North Dakota",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Ohio",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Oklahoma",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Oregon",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Pennsylvania",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Rhode Island",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "South Carolina",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "South Dakota",
+	"felon_voting_law": "Felons convicted on or after July 1, 2012, automatically have their right to vote restored once they complete their full sentence. Those convicted before July 1, 2012, automatically have their right to vote restored after being released from incarceration and completing parole. Felons must register again to vote once eligible."
+  },
+  {
+	"state": "Tennessee",
+	"felon_voting_law": "After completing their full sentence, felons convicted on or after May 18, 1981, must have an application completed by an agent or officer in the pardoning, incarcerating or probation/parole authority for each felony conviction. The application must be submitted to the county election commission office in the county where they live. Felons convicted between Jan. 15, 1973, and May 17, 1981, never lose the right to vote. Those convicted of one of 19 specified felonies before Jan. 15, 1973, lose the right to vote. They must meet one of four specified conditions and present proof of meeting one of those conditions to the county election commission office in the county where they live. They may register again to vote once the coordinator of elections has verified their eligibility. Those convicted of four specified felonies between July 1, 1986, and June 30, 1996, are permanently disenfranchised. Those convicted of four specified felonies between July 1, 1996 and June 30, 2006, are permanently disenfranchised. Those convicted of any of the above specified felonies or other specified crimes of a violent or sexual nature on or after July 1, 2006, are permanently disenfranchised."
+  },
+  {
+	"state": "Texas",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Utah",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they are released from incarceration. They must register again to vote once eligible."
+  },
+  {
+	"state": "Vermont",
+	"felon_voting_law": "Felons never lose the right to vote and can submit an absentee ballot while incarcerated."
+  },
+  {
+	"state": "Virginia",
+	"felon_voting_law": "In July, the Virginia Supreme Court struck down Gov. Terry McAuliffe's executive order that restored rights to more than 200,000 felons who completed the terms of their sentences. As a result, McAuliffe plans to sign individual orders to restore rights to those who were eligible under his order."
+  },
+  {
+	"state": "Washington",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible. Felons who fail to make three payments in a 12-month period can have their right to vote revoked."
+  },
+  {
+	"state": "West Virginia",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Wisconsin",
+	"felon_voting_law": "Felons automatically have their right to vote restored once they have completed their full sentence. They must register again to vote once eligible."
+  },
+  {
+	"state": "Wyoming",
+	"felon_voting_law": "First-time nonviolent offenders convicted on or after Jan. 1, 2016, automatically have their right to vote restored five years after completing their full sentence. First-time nonviolent offenders convicted before Jan. 1, 2016, must submit an application to the Wyoming Board of Parole to qualify for rights restoration. If qualified, they will automatically have their right to vote restored five years after the completion of their full sentence. Felons must register again to vote once eligible."
+}
+]

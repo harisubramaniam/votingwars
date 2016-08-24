@@ -1,0 +1,250 @@
+[
+{
+    "hc-key": "us-al",
+    "value":1,"data-point": "asd"
+},
+{
+    "hc-key": "us-ak",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-az",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ar",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ca",
+    "value":2,"data-point": "asd"
+},
+{
+    "hc-key": "us-co",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ct",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-de",
+    "value":3,"data-point": "asd"
+},
+{
+    "hc-key": "us-fl",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ga",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-hi",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-id",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-il",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-in",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ia",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ks",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ky",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-la",
+    "value":2,"data-point": "asd"
+},
+{
+    "hc-key": "us-me",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-md",
+    "value": 1,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ma",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-mi",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-mn",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ms",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-mo",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-mt",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ne",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nv",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nh",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nj",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nm",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ny",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nc",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-nd",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-oh",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ok",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-or",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-pa",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-ri",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-sc",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-sd",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-tn",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-tx",
+    "value":1,"data-point": "asd"
+},
+{
+    "hc-key": "us-ut",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-vt",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-va",
+    "value":1,"data-point": "asd"
+},
+{
+    "hc-key": "us-wa",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-dc",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-wv",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-wi",
+    "value": 0,
+    "data-point": "asd"
+},
+{
+    "hc-key": "us-wy",
+    "value":1,"data-point": "asd"
+}
+]
